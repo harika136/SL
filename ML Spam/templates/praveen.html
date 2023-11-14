@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAIL CUSTOMER SEGMENTATION</title>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-image: url('https://www.shutterstock.com/image-photo/email-blurred-city-abstract-lights-260nw-1445689751.jpg');
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        color: #333;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      h1 {
+        font-size: 5rem;
+        color:#F0FFFF;
+        -webkit-text-stroke-width: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight:100;
+            stroke: red;
+            stroke-width: 15px;
+      }
+      .form-container {
+        padding: 20px;
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+        border:5px solid #fff;
+      }
+      .form-container textarea {
+        width: 100%;
+        height: 200px;
+        border-top-right-radius: 75px;
+        border-bottom-left-radius: 75px;
+        border: none;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        color:#fff;
+        background: transparent;
+      }
+      .form-container input[type="submit"] {
+        display: block;
+        margin: 20px auto 0;
+        width: 200px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(236, 17, 17);
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+      .form-container input[type="submit"]:hover {
+        background-color:#FF6347;
+      }
+      .result {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      .result span {
+        font-weight: bold;
+        color: rgb(103, 80, 80);
+      }
+      ::placeholder{
+        color:#fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>MAIL CUSTOMER SEGMENTATION</h1>
+        <!-- <p>{{k}}</p> -->
+      </div>
+      <div class="form-container">
+        <form action="/predict" method="POST">
+          <textarea
+            name="input_mail"
+            placeholder="Enter the spam email here..."
+            cols="30"
+            rows="10"
+          ></textarea> 
+          <input type="submit" value="submit">
+        </form>
+      </div>
+      
+      {% if email_type %}
+      <div class="result">
+        <p>The entered email is possibly <span>{{ email_type }}</span>.</p>
+      </div>
+      {% endif %}
+    </div>
+    <h2><div align="center" >{{k}}</div><h2>
+  </body>
+</html>
