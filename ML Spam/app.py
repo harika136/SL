@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return render_template('praveen.html')
+    return render_template('harika.html')
 
 
 @app.route('/predict', methods=['POST'])
@@ -45,7 +45,7 @@ def predict():
         else:
             k = 'Spam mail'
 
-    return render_template("praveen.html", k=k)
+    return render_template("harika.html", k=k)
 
 
 if __name__ == "__main__":
